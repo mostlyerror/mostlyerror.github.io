@@ -293,32 +293,30 @@
 
 	var formEvents = function () {
 		// var $revealFields = $('.reveal');
-		var $radios = $('input[name="attending_radio"]');
-		var $password = $('#password');
+		// var $radios = $('input[name="attending_radio"]');
+		// $radios.each((radio) => {
+		// 	$radios[radio].addEventListener('change', (event) => {
+		// 		// if (event.target.value === "yes") {
+		// 		// 	$revealFields.show();
+		// 		// } else {
+		// 		// 	$revealFields.hide();
+		// 		// }
+		// 	})
+		// })
 
-		$radios.each((radio) => {
-			$radios[radio].addEventListener('change', (event) => {
-				// if (event.target.value === "yes") {
-				// 	$revealFields.show();
-				// } else {
-				// 	$revealFields.hide();
-				// }
-			})
-		})
-
-		var $form = document.getElementById('rsvp-form');
-		$form.addEventListener('submit', (event) => {
-			event.preventDefault();
-			var enteredPassword = $password[0].value;
-			if (enteredPassword !== "Psalm121") {
-				alert('Incorrect Password.\nHint: I lift my eyes up to the hills...');
-				// focus password field.
-				$password.select();
-				return false;
-			} else {
-				event.target.submit();
-			}
-		});
+		// var $form = document.getElementById('rsvp-form');
+		// $form.addEventListener('submit', (event) => {
+		// 	event.preventDefault();
+		// 	var enteredPassword = $password[0].value;
+		// 	if (enteredPassword !== "Psalm121") {
+		// 		alert('Incorrect Password.\nHint: I lift my eyes up to the hills...');
+		// 		// focus password field.
+		// 		$password.select();
+		// 		return false;
+		// 	} else {
+		// 		event.target.submit();
+		// 	}
+		// });
 	}
 
 	// var request;
