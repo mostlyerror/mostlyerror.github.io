@@ -832,6 +832,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline-heading {
   display: inline-block;
+  line-height: 1em;
+  margin-top: 5vh;
 }
 .timeline-heading-center {
   text-align: center;
@@ -853,12 +855,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
+.timeline-headshot {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
 .date {
-  margin-bottom: 20px;
+  margin-bottom: 5vh;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
 
 .timeline-body {
   display:inline-block;
@@ -867,17 +877,17 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-body > p {
   padding-left: 10px;
   padding-right: 10px;
+  text-indent: 5vw;
 }
 @media screen and (max-width: 600px) {
   .timeline-body > p {
     text-align: justify;
-    text-indent: 5vw;
   }
 }
 
 .timeline-body > p,
 .timeline-body > ul {
-  margin-bottom: 0;
+  margin-bottom: 4vh;
 }
 
 .timeline-body > p + p {
