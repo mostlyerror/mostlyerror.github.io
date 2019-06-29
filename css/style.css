@@ -444,6 +444,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* qwer */
 .qbootstrap-cover {
   background-image: url('../images/hero320.jpg');
   background-repeat: no-repeat;
@@ -486,7 +487,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 768px) {
   .qbootstrap-cover {
-    background-image: url('../images/hero844.jpg');
+    background-image: url('../images/hero1280.jpg');
   }
   .qbootstrap-cover .display-tc h1 {
     margin-top: 30vh;
@@ -496,7 +497,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 5vh;
   }
 }
-/* qwer */
 @media screen and (min-width: 1024px) {
   .qbootstrap-cover {
     background-image: url('../images/hero1280.jpg');
