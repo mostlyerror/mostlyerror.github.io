@@ -511,8 +511,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 1440px) {
   .qbootstrap-cover {
-    padding: 0 auto;
-    margin: 0 auto;
+    background-image: url('../images/hero2560.jpg');
+    background-position: center;
   }
   .qbootstrap-cover .display-tc h1 {
     font-size: 12vh;
@@ -1721,4 +1721,10 @@ hr.dashed {
 
 .section-heading .section-subtext {
   margin-top: 10vh;
+}
+
+@media screen and (min-width: 1400px) {
+  .container { 
+    width: 1400px;
+  }
 }
