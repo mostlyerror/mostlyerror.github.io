@@ -1728,3 +1728,7 @@ hr.dashed {
     width: 1400px;
   }
 }
+.form-container {
+  width: 70vw;
+  margin: 0 auto;
+}

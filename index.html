@@ -585,41 +585,42 @@
 
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
+					<div class="form-container">
+						<form id="rsvp-form" class="form-inline" method="POST"
+							action="https://docs.google.com/forms/d/e/1FAIpQLSfvepozMcx9J0vkBU0ETjqaEC5QKGaoPwMAxhLwyhl-oy-pZg/formResponse">
+							<div class="row-md-4 row-sm-4">
+								<div class="form-group">
+									<input name="entry.1498135098" type="text" class="form-control" id="name" placeholder="Name" required>
+								</div>
 
-					<form id="rsvp-form" class="form-inline" method="POST"
-						action="https://docs.google.com/forms/d/e/1FAIpQLSfvepozMcx9J0vkBU0ETjqaEC5QKGaoPwMAxhLwyhl-oy-pZg/formResponse">
-						<div class="row-md-4 row-sm-4">
-							<div class="form-group">
-								<input name="entry.1498135098" type="text" class="form-control" id="name" placeholder="Name" required>
-							</div>
+								<div class="form-group">
+									<input name="entry.231776993" type="email" class="form-control" id="email" placeholder="Email"
+										required>
+								</div>
 
-							<div class="form-group">
-								<input name="entry.231776993" type="email" class="form-control" id="email" placeholder="Email" required>
-							</div>
+								<div class="form-group">
+									<input name="entry.1432773565" type="tel" class="form-control" id="phone" placeholder="Phone">
+								</div>
 
-							<div class="form-group">
-								<input name="entry.1432773565" type="tel" class="form-control" id="phone" placeholder="Phone">
-							</div>
+								<div class="form-group">
+									<input name="entry.955819711" type="address" class="form-control" id="mailing_address"
+										placeholder="Mailing Address">
+								</div>
 
-							<div class="form-group">
-								<input name="entry.955819711" type="address" class="form-control" id="mailing_address"
-									placeholder="Mailing Address">
-							</div>
+								<div class="form-group form-group-attending">
+									<label for="attending_radio"><strong>TENTATIVE</strong> RSVP</label>
+									<p>
+										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
+											value="Yes, I'm coming" required>Yes</input>&nbsp;
+										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
+											value="Sorry, can't make it">No</input>&nbsp;
 
-							<div class="form-group form-group-attending">
-								<label for="attending_radio"><strong>TENTATIVE</strong> RSVP</label>
-								<p>
-									<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-										value="Yes, I'm coming" required>Yes</input>&nbsp;
-									<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-										value="Sorry, can't make it">No</input>&nbsp;
+										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
+											value="Maybe">Maybe</input>
+									</p>
+								</div>
 
-									<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-										value="Maybe">Maybe</input>
-								</p>
-							</div>
-
-							<!-- <div class="form-group reveal animate-box">
+								<!-- <div class="form-group reveal animate-box">
 							<label for="adults" class="sr-only">Adults</label>
 							<input type="number" class="form-control" id="adults" placeholder="How many adults?">
 						</div>
@@ -629,11 +630,11 @@
 							<input type="number" class="form-control" id="kids" placeholder="How many kids?">
 						</div> -->
 
-							<div class="form-group">
-								<button class="btn btn-default btn-block" type="submit">Send</button>
-							</div>
-					</form>
-
+								<div class="form-group">
+									<button class="btn btn-default btn-block" type="submit">Send</button>
+								</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
