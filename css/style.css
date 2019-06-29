@@ -849,8 +849,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline-title {
   display: inline-block;
-  margin-top: 0;
-  font-size: 34px;
+  font-size: 40px;
   color: #FF847C;
   margin-bottom: 10px;
 }
