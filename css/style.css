@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'Playlist-Script';
+  src: url('../fonts/Playlist-Script.eot');
+  src: url('../fonts/Playlist-Script.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Playlist-Script.svg#Playlist-Script') format('svg'),
+       url('../fonts/Playlist-Script.ttf') format('truetype'),
+       url('../fonts/Playlist-Script.woff') format('woff'),
+       url('../fonts/Playlist-Script.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
   src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
@@ -40,7 +52,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Clicker Script", cursive;
+  font-family: "Playlist-Script", cursive;
   font-weight: 400;
 }
 
@@ -231,8 +243,8 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
   float: left;
   width: 100%;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+  padding-bottom: 5vh;
+  margin-bottom: 5vh;
   clear: both;
 }
 .section-heading.svg-sm-2 .svg {
@@ -309,16 +321,23 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.03);
 }
 
+/* asdf */
 .qbootstrap-cover,
 .qbootstrap-hero {
   position: relative;
   height: 800px;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .qbootstrap-cover,
   .qbootstrap-hero {
     height: 700px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .qbootstrap-cover,
+  .qbootstrap-hero {
+    height: 100vh;
   }
 }
 
@@ -426,6 +445,66 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   font-weight: 300 !important;
 }
+
+.qbootstrap-cover .display-tc {
+  /* width: 50vw; */
+}
+
+.qbootstrap-cover .display-tc h1 {
+  color: #fff;
+  font-size: 8vh;
+  margin-top: 10vh;
+  margin-bottom: 4vh;
+  font-weight: 300 !important;
+}
+#hero-subheading {
+  font-size: 4vh;
+}
+@media screen and (min-width: 375px) {
+  .qbootstrap-cover .display-tc h1 {
+    font-size: 8vh;
+  }
+  #hero-subheading {
+    font-size: 4vh;
+  }
+}
+@media screen and (min-width: 425px) {
+  .qbootstrap-cover .display-tc h1 {
+    font-size: 8vh;
+  }
+  #hero-subheading {
+    font-size: 4vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .qbootstrap-cover .display-tc h1 {
+    margin-top: 30vh;
+    font-size: 10vh;
+  }
+  #hero-subheading {
+    font-size: 5vh;
+  }
+}
+/* qwer */
+@media screen and (min-width: 1024px) {
+  .qbootstrap-cover .display-tc h1 {
+    margin-top: 20vh;
+    font-size: 12vh;
+  }
+  #hero-subheading {
+    font-size: 6vh;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .qbootstrap-cover .display-tc h1 {
+    margin-top: 30vh;
+    font-size: 14vh;
+  }
+  #hero-subheading {
+    font-size: 7vh;
+  }
+}
+
 .qbootstrap-cover .display-tc h2 strong,
 .video-hero .display-tc h2 strong {
   font-weight: 700;
@@ -1461,7 +1540,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 44px;
   border-bottom: none !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .qbootstrap-nav-toggle {
     display: block;
   }
@@ -1656,4 +1735,8 @@ hr.dashed {
   height: 6px; 
   background: url(../images/hr-11.png) repeat-x 0 0;
   border: 0;
+}
+
+.section-heading .section-subtext {
+  margin-top: 10vh;
 }
