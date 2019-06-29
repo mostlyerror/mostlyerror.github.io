@@ -325,20 +325,17 @@ h1, h2, h3, h4, h5, h6 {
 .qbootstrap-cover,
 .qbootstrap-hero {
   position: relative;
-  height: 800px;
+  height: 100vh;
   width: 100%;
+  background-color: #a79b9a;
 }
 @media screen and (min-width: 768px) {
-  .qbootstrap-cover,
-  .qbootstrap-hero {
-    height: 700px;
-  }
 }
 @media screen and (min-width: 1024px) {
-  .qbootstrap-cover,
-  .qbootstrap-hero {
-    height: 100vh;
-  }
+}
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1600px) {
 }
 
 .qbootstrap-overlay {
@@ -361,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   .qbootstrap-cover,
   .video-hero {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -446,14 +443,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300 !important;
 }
 
-.qbootstrap-cover .display-tc {
-  /* width: 50vw; */
+
+.qbootstrap-cover {
+  background-image: url('../images/hero320.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .qbootstrap-cover .display-tc h1 {
   color: #fff;
   font-size: 8vh;
-  margin-top: 10vh;
+  margin-top: 0;
   margin-bottom: 4vh;
   font-weight: 300 !important;
 }
@@ -461,7 +462,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 4vh;
 }
 @media screen and (min-width: 375px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero475.jpg');
+  }
   .qbootstrap-cover .display-tc h1 {
+    margin-top: 25vh;
     font-size: 8vh;
   }
   #hero-subheading {
@@ -469,6 +474,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (min-width: 425px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero640.jpg');
+  }
   .qbootstrap-cover .display-tc h1 {
     font-size: 8vh;
   }
@@ -477,6 +485,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (min-width: 768px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero844.jpg');
+  }
   .qbootstrap-cover .display-tc h1 {
     margin-top: 30vh;
     font-size: 10vh;
@@ -487,8 +498,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* qwer */
 @media screen and (min-width: 1024px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero1280.jpg');
+  }
   .qbootstrap-cover .display-tc h1 {
-    margin-top: 20vh;
+    margin-top: 25vh;
     font-size: 12vh;
   }
   #hero-subheading {
@@ -496,12 +510,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media screen and (min-width: 1440px) {
+  .qbootstrap-cover {
+    padding: 0 auto;
+    margin: 0 auto;
+  }
   .qbootstrap-cover .display-tc h1 {
-    margin-top: 30vh;
-    font-size: 14vh;
+    font-size: 12vh;
   }
   #hero-subheading {
-    font-size: 7vh;
+    font-size: 6vh;
   }
 }
 
@@ -972,41 +989,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4vh; 
 }
 
-/* @media (max-width: 992px) {
-  ul.timeline:before {
-    left: 100px;
-  }
-
-  ul.timeline > li > .timeline-panel {
-    width: calc(100% - 240px);
-    width: -moz-calc(100% - 240px);
-    width: -webkit-calc(100% - 240px);
-  }
-
-  ul.timeline > li > .timeline-badge {
-    left: 15px;
-    margin-left: 0;
-    top: 16px;
-  }
-
-  ul.timeline > li > .timeline-panel {
-    float: right;
-  }
-
-  ul.timeline > li > .timeline-panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-  }
-
-  ul.timeline > li > .timeline-panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -14px;
-    right: auto;
-  }
-} */
 .qbootstrap-greetings {
   background-size: cover;
   position: relative;
