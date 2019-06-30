@@ -450,39 +450,50 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-top: 10%;
+
 }
 
 .qbootstrap-cover .display-tc h1 {
   color: #fff;
-  font-size: 8vh;
-  margin-top: 0;
-  margin-bottom: 4vh;
   font-weight: 300 !important;
+  font-size: 50px;
+  padding-top: 50px;
 }
 #hero-subheading {
-  font-size: 4vh;
+  font-size: 20px;
 }
 @media screen and (min-width: 375px) {
   .qbootstrap-cover {
     background-image: url('../images/hero475.jpg');
   }
   .qbootstrap-cover .display-tc h1 {
-    margin-top: 25vh;
-    font-size: 8vh;
+    font-size: 50px;
   }
   #hero-subheading {
-    font-size: 4vh;
+    font-size: 20px;
   }
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 450px) {
   .qbootstrap-cover {
     background-image: url('../images/hero640.jpg');
   }
   .qbootstrap-cover .display-tc h1 {
-    font-size: 8vh;
+    font-size: 60px;
   }
   #hero-subheading {
-    font-size: 4vh;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero640.jpg');
+  }
+  .qbootstrap-cover .display-tc h1 {
+    font-size: 70px;
+  }
+  #hero-subheading {
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -490,11 +501,10 @@ h1, h2, h3, h4, h5, h6 {
     background-image: url('../images/hero1280.jpg');
   }
   .qbootstrap-cover .display-tc h1 {
-    margin-top: 30vh;
-    font-size: 10vh;
+    font-size: 80px;
   }
   #hero-subheading {
-    font-size: 5vh;
+    font-size: 35px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -502,11 +512,11 @@ h1, h2, h3, h4, h5, h6 {
     background-image: url('../images/hero1280.jpg');
   }
   .qbootstrap-cover .display-tc h1 {
-    margin-top: 25vh;
-    font-size: 12vh;
+    margin-top: 90px;
+    font-size: 140px;
   }
   #hero-subheading {
-    font-size: 6vh;
+    font-size: 70px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -515,10 +525,24 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
   }
   .qbootstrap-cover .display-tc h1 {
-    font-size: 12vh;
+    margin-top: 100px;
+    font-size: 160px;
   }
   #hero-subheading {
-    font-size: 6vh;
+    font-size: 90px;
+  }
+}
+@media screen and (min-width: 1980px) {
+  .qbootstrap-cover {
+    background-image: url('../images/hero2560.jpg');
+    background-position: center;
+  }
+  .qbootstrap-cover .display-tc h1 {
+    margin-top: 100px;
+    font-size: 160px;
+  }
+  #hero-subheading {
+    font-size: 90px;
   }
 }
 
@@ -1729,6 +1753,14 @@ hr.dashed {
   }
 }
 .form-container {
-  width: 70vw;
+  width: 70%;
   margin: 0 auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.navbar-right li span {
+  font-size: 2vw;
 }
