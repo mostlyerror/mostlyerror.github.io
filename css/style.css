@@ -459,6 +459,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300 !important;
   font-size: 50px;
   padding-top: 50px;
+  margin-top: 15%;
 }
 #hero-subheading {
   font-size: 20px;
@@ -491,6 +492,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .qbootstrap-cover .display-tc h1 {
     font-size: 70px;
+    margin-top: 0;
   }
   #hero-subheading {
     font-size: 30px;
