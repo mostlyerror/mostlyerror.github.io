@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
   float: left;
   width: 100%;
-  padding-bottom: 5vh;
+  /* padding-bottom: 5vh; */
   margin-bottom: 5vh;
   clear: both;
 }
@@ -267,19 +267,21 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 20px;
   line-height: 1.5;
 }
+.section-heading h3 {
+  color: #FF847C;
+  display: block;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  margin-top: 10vh;
+}
 @media screen and (max-width: 768px) {
   .section-heading h2 {
     font-size: 50px;
   }
 }
-.section-heading h3 {
-  font-weight: 300;
-  line-height: 1.5;
-  color: #929292;
-}
 @media screen and (max-width: 768px) {
   .section-heading h3 {
-    font-size: 24px !important;
+    font-size: 32px !important;
     line-height: 34px;
   }
 }
@@ -737,7 +739,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #qbootstrap-couple h3 {
   font-size: 34px;
-  font-family: "Clicker Script", cursive;
+  /* font-family: "Clicker Script", cursive; */
   color: #FF847C;
 }
 @media screen and (max-width: 768px) {
@@ -1765,4 +1767,7 @@ hr.dashed {
 
 .navbar-right li span {
   font-size: 2vw;
+}
+.ceremony {
+  margin-bottom: 5vw;
 }
