@@ -36,14 +36,19 @@
 	<!-- Simple Line Icons -->
 	<link rel="stylesheet" href="css/simple-line-icons.css">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- <link rel="stylesheet" href="css/owl.carousel.min.css"> -->
+	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
 	<!-- Magnific popup  -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- <link rel="stylesheet" href="css/magnific-popup.css"> -->
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 
+	<!-- Autocomplete -->
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+
 	<link rel="stylesheet" href="css/style.css">
+
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -650,11 +655,9 @@
 			<div class="row animate-box">
 				<div class="col-md-12 text-center section-heading svg-sm colored">
 					<img src="images/flaticon/svg/005-two.svg" class="svg">
-					<h2>Save The Date</h2>
-					<h3 style="color: rgba(255, 255, 255, 0.9);">October 26, 2019 | Houston, TX</h3>
+					<h2 style="color: rgba(255, 255, 255, 0.9);">RSVP</h2>
 					<div class="text-center section-subtext" style="color: rgba(255, 255, 255, 0.8);">
-						<p>Karis & Nik are getting married! Please provide your contact information.</p>
-						<p>Formal invitation to follow.</p>
+						<p>Please enter the password located on your printed invitation to RSVP:</p>
 					</div>
 				</div>
 			</div>
@@ -662,56 +665,53 @@
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="form-container">
-						<form id="rsvp-form" class="form-inline" method="POST"
-							action="https://docs.google.com/forms/d/e/1FAIpQLSfvepozMcx9J0vkBU0ETjqaEC5QKGaoPwMAxhLwyhl-oy-pZg/formResponse">
-							<div class="row-md-4 row-sm-4">
-								<div class="form-group">
-									<input name="entry.1498135098" type="text" class="form-control" id="name" placeholder="Name" required>
-								</div>
 
-								<div class="form-group">
-									<input name="entry.231776993" type="email" class="form-control" id="email" placeholder="Email"
-										required>
-								</div>
-
-								<div class="form-group">
-									<input name="entry.1432773565" type="tel" class="form-control" id="phone" placeholder="Phone"
-										required>
-								</div>
-
-								<div class="form-group">
-									<input name="entry.955819711" type="address" class="form-control" id="mailing_address"
-										placeholder="Mailing Address" required>
-								</div>
-
-								<div class="form-group form-group-attending">
-									<label for="attending_radio"><strong>TENTATIVE</strong> RSVP</label>
-									<p>
-										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-											value="Yes, I'm coming" required>Yes</input>&nbsp;
-										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-											value="Sorry, can't make it">No</input>&nbsp;
-
-										<input name="entry.1790520080" id="attending_radio" type="radio" name="attending_radio"
-											value="Maybe">Maybe</input>
-									</p>
-								</div>
-
-								<!-- <div class="form-group reveal animate-box">
-							<label for="adults" class="sr-only">Adults</label>
-							<input type="number" class="form-control" id="adults" placeholder="How many adults?">
+						<div class='form-group'>
+							<input class="form-control" id="rsvp-password" type="password" minlength="7" maxlength="7"/>
 						</div>
 
-						<div class="form-group reveal animate-box">
-							<label for="kids" class="sr-only">Kids</label>
-							<input type="number" class="form-control" id="kids" placeholder="How many kids?">
-						</div> -->
-
-								<div class="form-group">
-									<button class="btn btn-default btn-block" type="submit">Send</button>
+						<form id="rsvp-form" class="form-inline">
+							<div class="form-group">
+								<div class="autocomplete-container ui-front">
+									<input id="invitation_name" name="invitation_name" type="text" class="form-control" placeholder="Search By Name On Invitation">
+									<input id="invitation_id" name="invitation_id"  class="hide"/>
 								</div>
+							</div>
+
+							<div id="adult-form-template" class="form-group row">
+								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+									<input id="guest-attending-checkbox" class="form-control" name="attending" type="checkbox" checked />
+								</div>
+
+								<div class="col-lg-7 col-md-7 col-sm-11 col-xs-10">
+									<input id="guest-name-input" class="form-control" name="guest_name" type="text" />
+								</div>
+
+								<div class="col-lg-3 col-md-3 col-sm-11 col-sm-offset-1 col-xs-10 col-xs-offset-2">
+									<select id="meal-pref-select" class="form-control"  name="meal_pref">
+										<option value="beef">Beef</option>
+										<option value="fish">Fish</option>
+										<option value="vegetarian">Vegetarian</option>
+									</select>
+								</div>
+							</div>
+
+							<div id="kids-form-template" class="form-group row">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 col-xs-offset-2">
+									<input id="kids_num" class="form-control" type="number" value="0" placeholder="0">Kids</input>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
+									<input id="infants_num" class="form-control" type="number" value="0" placeholder="0">Infants</input>
+								</div>
+							</div>
+
+
+							<div class="form-group submit-button hide">
+								<button class="btn btn-default btn-block" type="submit">Send RSVP
+									<!-- <p>Only one reply, thanks!</p> -->
+								</button>
+							</div>
 						</form>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -895,19 +895,25 @@
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- YTPlayer -->
-	<script src="js/jquery.mb.YTPlayer.min.js"></script>
+	<!-- <script src="js/jquery.mb.YTPlayer.min.js"></script> -->
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Owl Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<!-- <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Parallax -->
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<!-- <script src="js/jquery.magnific-popup.min.js"></script> -->
+	<!-- <script src="js/magnific-popup-options.js"></script> -->
+	<!-- Autocomplete-->
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- csv handler -->
+	<script src="js/jquery.csv.min.js"></script>
 
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
+
+
 
 
 </body>
