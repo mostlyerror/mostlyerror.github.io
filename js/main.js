@@ -279,39 +279,15 @@
   // 	$('.player').mb_YTPlayer();
   // };
 
-  var formEvents = function() {
-    // var $revealFields = $('.reveal');
-    // var $radios = $('input[name="attending_radio"]');
-    // $radios.each((radio) => {
-    // 	$radios[radio].addEventListener('change', (event) => {
-    // 		// if (event.target.value === "yes") {
-    // 		// 	$revealFields.show();
-    // 		// } else {
-    // 		// 	$revealFields.hide();
-    // 		// }
-    // 	})
-    // })
-    // var $form = document.getElementById('rsvp-form');
-    // $form.addEventListener('submit', (event) => {
-    // 	event.preventDefault();
-    // 	var enteredPassword = $password[0].value;
-    // 	if (enteredPassword !== "Psalm121") {
-    // 		alert('Incorrect Password.\nHint: I lift my eyes up to the hills...');
-    // 		// focus password field.
-    // 		$password.select();
-    // 		return false;
-    // 	} else {
-    // 		event.target.submit();
-    // 	}
-    // });
-  };
-
   // password-protect the RSVP form
   $("#rsvp-password").on("input", function(e) {
     e.preventDefault();
     const value = e.target.value;
     if (value.length == 7) {
       if (value == "ktq+nko") {
+        // hide this form
+        $("#rsvp-password").hide();
+
         // unhide the other form
         // const rsvpForm = document.getElementById("rsvp-form");
         // $(rsvpForm).fadeIn();
@@ -1773,6 +1749,7 @@
   });
 
   $("#invitation_name").on("autocompleteselect", function(event, ui) {
+    $("#invitation_name").hide();
     const party = ui.item;
     $("#invitation_id").val(party.invitation_id);
 
@@ -1781,35 +1758,144 @@
     const kidsFormTemplate = document.getElementById("kids-form-template");
     const guestNames = party.Guests.split(", ");
 
+    let id = 0;
     for (var i = 0; i < party.Adult; i++) {
-      const $adultForm = $(adultFormTemplate).clone();
-
-      const $attendingInput = $adultForm.find("input[type='checkbox']");
-      $attendingInput.attr("name", party.invitation_id + "attending" + i);
+      const $adultForm = $(adultFormTemplate).clone({
+        withDataAndEvents: true
+      });
 
       const $nameInput = $adultForm.find("input[type='text']");
-      $nameInput.attr("name", party.invitation_id + "guest_name" + i);
       $nameInput.val(guestNames[i] || "Guest Name");
 
-      const $mealPrefInput = $adultForm.find("select");
-      $mealPrefInput.attr("name", party.invitation_id + "meal_pref" + i);
+      id += 1;
+      const $attendingAccept = $adultForm.find(".guest-attending-accept");
+      $attendingAccept[0].name = `guest_attending_${id}`;
+      $attendingAccept[0].id = `guest_attending_${id}`;
+      $attendingAccept.parent().attr("for", `guest_attending_${id}`);
+      $attendingAccept.on("change", function(e) {
+        $attendingDecline
+          .parent()
+          .parent()
+          .removeClass("active");
+        $(this)
+          .parent()
+          .parent()
+          .addClass("active");
+        $(this).val("yes");
+      });
+
+      const $attendingDecline = $adultForm.find(".guest-attending-decline");
+      $attendingDecline[0].name = `guest_attending_${id}`;
+      id += 1;
+      $attendingDecline[0].id = `guest_attending_${id}`;
+      $attendingDecline.parent().attr("for", `guest_attending_${id}`);
+      $attendingDecline.on("change", function(e) {
+        $attendingAccept
+          .parent()
+          .parent()
+          .removeClass("active");
+        $(this)
+          .parent()
+          .parent()
+          .addClass("active");
+        $(this).val("no");
+      });
+
+      if (party["Coming?"] === "Yes") {
+        $attendingAccept.val("yes");
+        $attendingAccept
+          .parent()
+          .parent()
+          .addClass("active");
+      } else {
+        $attendingDecline.val("no");
+        $attendingDecline
+          .parent()
+          .parent()
+          .addClass("active");
+      }
+
+      const $guestBeef = $adultForm.find(".guest-meal-pref-beef");
+      const $guestFish = $adultForm.find(".guest-meal-pref-fish");
+      const $guestVegetarian = $adultForm.find(".guest-meal-pref-vegetarian");
+      $guestBeef[0].name = `guest_meal_pref_${id}`;
+      $guestFish[0].name = `guest_meal_pref_${id}`;
+      $guestVegetarian[0].name = `guest_meal_pref_${id}`;
+
+      $guestBeef[0].id = `guest_meal_pref_${id}`;
+      $guestBeef
+        .parent()
+        .find("label")
+        .attr("for", `guest_meal_pref_${id}`);
+      $guestBeef.on("change", function(e) {
+        $(this)
+          .closest("li")
+          .addClass("active");
+        $($guestFish)
+          .closest("li")
+          .removeClass("active");
+        $($guestVegetarian)
+          .closest("li")
+          .removeClass("active");
+        $(this).val("beef");
+      });
+
+      id += 1;
+      $guestFish[0].id = `guest_meal_pref_${id}`;
+      $guestFish
+        .parent()
+        .find("label")
+        .attr("for", `guest_meal_pref_${id}`);
+      $guestFish.on("change", function(e) {
+        $(this)
+          .closest("li")
+          .addClass("active");
+        $($guestBeef)
+          .closest("li")
+          .removeClass("active");
+        $($guestVegetarian)
+          .closest("li")
+          .removeClass("active");
+        $(this).val("fish");
+      });
+
+      id += 1;
+      $guestVegetarian[0].id = `guest_meal_pref_${id}`;
+      $guestVegetarian
+        .parent()
+        .find("label")
+        .attr("for", `guest_meal_pref_${id}`);
+      $guestVegetarian.on("change", function(e) {
+        $(this)
+          .closest("li")
+          .addClass("active");
+        $($guestBeef)
+          .closest("li")
+          .removeClass("active");
+        $($guestFish)
+          .closest("li")
+          .removeClass("active");
+        $($guestFish);
+        $(this).val("vegetarian");
+      });
 
       $adultForm.appendTo($rsvpForm);
       $adultForm.removeClass("hide");
     }
 
-    if (party.Child || party.Infant) {
-      const $kidsForm = $(kidsFormTemplate).clone();
-      $kidsForm.find("#kids_num").val(party.Child);
-      $kidsForm.find("#infants_num").val(party.Infant);
-      $kidsForm.appendTo($rsvpForm);
-      $kidsForm.removeClass("hide");
-    }
+    const $kidsForm = $(kidsFormTemplate).clone();
+    $kidsForm.find("#kids_num").val(party.Child);
+    $kidsForm.find("#infants_num").val(party.Infant);
+    $kidsForm.appendTo($rsvpForm);
+    $kidsForm.removeClass("hide");
 
     $("#rsvp-form .submit-button")
       .first()
       .appendTo($rsvpForm)
       .removeClass("hide");
+
+    adultFormTemplate.remove();
+    kidsFormTemplate.remove();
   });
 
   // submit to Google Sheet "database"
@@ -1818,6 +1904,17 @@
 
   $("#rsvp-form").on("submit", function(e) {
     e.preventDefault();
+
+    // for each adult form in the rsvp form..
+    const rsvpFormObject = $(this).serializeObject()
+    console.log(rsvpFormObject)
+    $("#rsvp-form #adult-form-template").each(function(i, form) {
+      const guestName = $(form).find('.guest-name-input').val()
+      rsvpFormObject.guest_name = guestName
+
+      const attending = $(form).find('input[name="guest_attending"]')
+      const mealPref = $(form).find('input[name="guest_meal_pref"]')
+    });
 
     $.ajax({
       url: googleSheetUrl,
@@ -1837,6 +1934,5 @@
     navigationSection();
     contentWayPoint();
     inlineSVG();
-    formEvents();
   });
 })();

@@ -1882,26 +1882,49 @@ hr.dashed {
   letter-spacing: 0.3vw;
 }
 
-#adult-form-template.form-group.row {
+#adult-form-template .guest-name-input {
+  text-align: center;
+  font-variant: all-small-caps;
+  font-size: 1.5em !important;
 }
 
-#adult-form-template #guest-attending-checkbox {
-  width: 125%;
-  min-width: 24px;
+.guest-attending-radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#adult-form-template #guest-name-input {
-  /* width: 65%; */
+
+.guest-attending-radio.active {
+  color: white;
+  /* border-bottom: 1px dotted white; */
+  /* text-style: underline; */
 }
-#adult-form-template #meal-pref-label {
-  /* width: auto; */
-}
-#adult-form-template #meal-pref-select {
-  /* width: auto; */
+
+.guest-attending-radio {
   font-variant: all-small-caps;
-  margin-top: 5px;
 }
-#adult-form-template #meal-pref-select option {
-  color: black;
+
+.guest-meal-pref-container ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.guest-meal-pref-container li {
+  display: inline;
+  font-variant: all-small-caps;
+}
+
+.guest-meal-pref-container li.active {
+  color: white;
+}
+
+.guest-meal-pref-container input[type="radio"] {
+  display: none;
+}
+
+.guest-meal-pref.active {
+  color: white;
 }
 
 #kids-form-template.form-group.row {
@@ -1912,8 +1935,5 @@ hr.dashed {
 #qbootstrap-started .form-control {
   padding-top: 0;
   padding-bottom: 0;
-  font-size: inherit !important;
-}
-
-.not-attending {
+  /* font-size: inherit !important; */
 }

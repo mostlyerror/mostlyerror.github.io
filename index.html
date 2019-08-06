@@ -678,31 +678,56 @@
 								</div>
 							</div>
 
-							<div id="adult-form-template" class="form-group row">
-								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
-									<input id="guest-attending-checkbox" class="form-control" name="attending" type="checkbox" checked />
+							<div id="adult-form-template" class="row hide">
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									<input class="form-control guest-name-input" name="guest_name" type="text" />
 								</div>
 
-								<div class="col-lg-7 col-md-7 col-sm-11 col-xs-10">
-									<input id="guest-name-input" class="form-control" name="guest_name" type="text" />
+								<div class="col-sm-12 col-md-12 col-lg-12 guest-attending-radio-container">
+
+									<div class="guest-attending-radio">
+										<label for="">
+											<input class="guest-attending-accept hide" type="radio" name="guest_attending" value="yes"/>
+											Accepts with pleasure
+										</label>
+									</div>
+
+									<div class="guest-attending-radio">
+										<label for="">
+											<input class="guest-attending-decline hide" type="radio" name="guest_attending" value="no"/>
+											Declines with regret
+										</label>
+									</div>
+
 								</div>
 
-								<div class="col-lg-3 col-md-3 col-sm-11 col-sm-offset-1 col-xs-10 col-xs-offset-2">
-									<select id="meal-pref-select" class="form-control"  name="meal_pref">
-										<option value="beef">Beef</option>
-										<option value="fish">Fish</option>
-										<option value="vegetarian">Vegetarian</option>
-									</select>
+								<div class="col-sm-12 col-md-12 col-lg-12 guest-meal-pref-container">
+									<ul>
+										<li>
+											<label>Beef</label>
+											<input class="guest-meal-pref-beef" type="radio" name="guest_meal_pref" value="beef"/>
+										</li>
+										<li>
+											<label>Fish</label>
+												<input class="guest-meal-pref-fish" type="radio" name="guest_meal_pref" value="fish"/>
+										</li>
+										<li>
+											<label>Vegetarian</label>
+												<input class="guest-meal-pref-vegetarian" type="radio" name="guest_meal_pref" value="vegetarian"/>
+										</li>
+									</ul>
 								</div>
 							</div>
 
-							<div id="kids-form-template" class="form-group row">
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5 col-xs-offset-2">
-									<input id="kids_num" class="form-control" type="number" value="0" placeholder="0">Kids</input>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
-									<input id="infants_num" class="form-control" type="number" value="0" placeholder="0">Infants</input>
-								</div>
+							<div id="kids-form-template" class="form-group row hide">
+								<p class="col-xs-3 col-sm-3">
+									Kids:
+									<input id="kids_num" name="kids_num" class="form-control" type="number" value="0" placeholder="0"/>
+								</p>
+								<p class="col-xs-3 col-sm-3">
+									Infants: 
+									<input id="infants_num" name="infants_num" class="form-control" type="number" value="0" placeholder="0"/>
+								</p>
 							</div>
 
 
@@ -716,154 +741,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Gallery -->
-	<!-- <div id="qbootstrap-gallery" data-section="gallery">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-12 text-center section-heading svg-sm colored">
-						<img src="images/flaticon/svg/005-two.svg" class="svg"
-							alt="Free HTML5 Bootstrap Template by QBootstrap.com">
-						<h2>Our Selfie Photos</h2>
-						<div class="row">
-							<div class="col-md-10 col-md-offset-1 subtext">
-								<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-									the blind texts.</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup image-popup" href="images/gallery-1.jpg"><img src="images/gallery-1.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-10.jpg"><img src="images/gallery-10.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-6.jpg"><img src="images/gallery-6.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-2.jpg"><img src="images/gallery-2.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-5.jpg"><img src="images/gallery-5.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-7.jpg"><img src="images/gallery-7.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-3.jpg"><img src="images/gallery-3.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-4.jpg"><img src="images/gallery-4.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-8.jpg"><img src="images/gallery-8.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-					<div class="gallery animate-box">
-						<a class="gallery-img image-popup" href="images/gallery-9.jpg"><img src="images/gallery-9.jpg"
-								class="img-responsive" alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- Blog  -->
-	<!-- <div id="qbootstrap-press" data-section="blog">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-12 text-center section-heading svg-sm colored">
-						<img src="images/flaticon/svg/005-two.svg" class="svg"
-							alt="Free HTML5 Bootstrap Template by QBootstrap.com">
-						<h2>Our Blog</h2>
-						<div class="row">
-							<div class="col-md-10 col-md-offset-1 subtext">
-								<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-									the blind texts.</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="qbootstrap-press-item animate-box">
-						<div class="qbootstrap-press-img" style="background-image: url(images/blog-1.jpg)">
-						</div>
-						<div class="qbootstrap-press-text">
-							<h3 class="h2 qbootstrap-press-title">The Wedding Party <span class="qbootstrap-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
-								dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="qbootstrap-press-item animate-box">
-						<div class="qbootstrap-press-img" style="background-image: url(images/blog-2.jpg)">
-						</div>
-						<div class="qbootstrap-press-text">
-							<h3 class="h2 qbootstrap-press-title">Wedding Party <span class="qbootstrap-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
-								dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="qbootstrap-press-item animate-box">
-						<div class="qbootstrap-press-img" style="background-image: url(images/blog-3.jpg);">
-						</div>
-						<div class="qbootstrap-press-text">
-							<h3 class="h2 qbootstrap-press-title">Venue Wedding <span class="qbootstrap-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
-								dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="qbootstrap-press-item animate-box">
-						<div class="qbootstrap-press-img" style="background-image: url(images/blog-4.jpg);">
-						</div>
-						<div class="qbootstrap-press-text">
-							<h3 class="h2 qbootstrap-press-title">About The Couple <span class="qbootstrap-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
-								dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div> -->
 
 	<footer id="footer" role="contentinfo">
 		<div class="container">
