@@ -1866,7 +1866,7 @@ hr.dashed {
 }
 
 .navbar-right li span {
-  font-size: 2vw;
+  font-size: 1em;
 }
 .ceremony {
   margin-bottom: 5vw;
@@ -1886,5 +1886,4 @@ hr.dashed {
 
 .map-container {
   margin-top: 5vw;
-
 }
