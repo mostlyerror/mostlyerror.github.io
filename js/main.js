@@ -1773,12 +1773,8 @@
       $attendingAccept[0].id = `guest_attending_${id}`;
       $attendingAccept.parent().attr("for", `guest_attending_${id}`);
       $attendingAccept.on("change", function(e) {
-        $attendingDecline
-          .parent()
-          .parent()
-          .removeClass("active");
+        $attendingDecline.parent().removeClass("active");
         $(this)
-          .parent()
           .parent()
           .addClass("active");
         $(this).val("yes");
@@ -1790,12 +1786,8 @@
       $attendingDecline[0].id = `guest_attending_${id}`;
       $attendingDecline.parent().attr("for", `guest_attending_${id}`);
       $attendingDecline.on("change", function(e) {
-        $attendingAccept
-          .parent()
-          .parent()
-          .removeClass("active");
+        $attendingAccept.parent().removeClass("active");
         $(this)
-          .parent()
           .parent()
           .addClass("active");
         $(this).val("no");
@@ -1803,16 +1795,12 @@
 
       if (party["Coming?"] === "Yes") {
         $attendingAccept.val("yes");
-        $attendingAccept
-          .parent()
-          .parent()
-          .addClass("active");
+        $attendingAccept.parent().addClass("active");
+        $attendingDecline.parent().removeClass("active");
       } else {
         $attendingDecline.val("no");
-        $attendingDecline
-          .parent()
-          .parent()
-          .addClass("active");
+        $attendingDecline.parent().addClass("active");
+        $attendingAccept.parent().removeClass("active");
       }
 
       const $guestBeef = $adultForm.find(".guest-meal-pref-beef");
@@ -1906,23 +1894,51 @@
     e.preventDefault();
 
     // for each adult form in the rsvp form..
-    const rsvpFormObject = $(this).serializeObject()
-    console.log(rsvpFormObject)
+    const rsvpFormObject = $(this).serializeObject();
+
     $("#rsvp-form #adult-form-template").each(function(i, form) {
-      const guestName = $(form).find('.guest-name-input').val()
-      rsvpFormObject.guest_name = guestName
+      const guestName = $(form)
+        .find(".guest-name-input")
+        .val();
 
-      const attending = $(form).find('input[name="guest_attending"]')
-      const mealPref = $(form).find('input[name="guest_meal_pref"]')
+      const invitation_id = $("#invitation_id").val();
+      const invitation_name = $("#invitation_name").val();
+      const guest_name = guestName;
+      const guest_attending = $(form).find(
+        'input[name^="guest_attending"]:checked'
+      )[0].value;
+      const guest_meal_pref = $(form).find(
+        'input[name^="guest_meal_pref"]:checked'
+      )[0].value;
+      const kids_num = $("#kids_num").val();
+      const infants_num = $("#infants_num").val();
+
+      const data = {
+        invitation_id,
+        invitation_name,
+        guest_name,
+        guest_attending,
+        guest_meal_pref,
+        kids_num,
+        infants_num
+      };
+
+      $(".submit-button").prop("disabled", true);
+
+      $.ajax({
+        url: googleSheetUrl,
+        method: "POST",
+        data: data,
+        dataType: "jsonp",
+        contentType: "application/javascript"
+      }).error(function(err) {
+        if (err.status === 200) {
+          $(".submit-button", "#rsvp-form").fadeOut('fast', () => {
+            $("#thanks").fadeIn('fast')
+          });
+        }
+      });
     });
-
-    $.ajax({
-      url: googleSheetUrl,
-      method: "POST",
-      data: $(this).serializeObject(),
-      dataType: "jsonp",
-      contentType: "applicaton/javascript"
-    }).success(console.log("success"));
   });
 
   // dom onload

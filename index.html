@@ -653,7 +653,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
-				<div class="col-md-12 text-center section-heading svg-sm colored">
+				<div class="text-center section-heading svg-sm colored">
 					<img src="images/flaticon/svg/005-two.svg" class="svg">
 					<h2 style="color: rgba(255, 255, 255, 0.9);">RSVP</h2>
 					<div class="text-center section-subtext" style="color: rgba(255, 255, 255, 0.8);">
@@ -678,6 +678,10 @@
 								</div>
 							</div>
 
+							<div id="thanks" class="container">
+								<h2>Thanks for your response!</h2>
+							</div>
+
 							<div id="adult-form-template" class="row hide">
 								<div class="col-sm-12 col-md-12 col-lg-12">
 									<input class="form-control guest-name-input" name="guest_name" type="text" />
@@ -686,13 +690,10 @@
 								<div class="col-sm-12 col-md-12 col-lg-12 guest-attending-radio-container">
 
 									<div class="guest-attending-radio">
-										<label for="">
-											<input class="guest-attending-accept hide" type="radio" name="guest_attending" value="yes"/>
+										<label class="active" for="">
+											<input class="guest-attending-accept hide" type="radio" name="guest_attending" value="yes" checked/>
 											Accepts with pleasure
 										</label>
-									</div>
-
-									<div class="guest-attending-radio">
 										<label for="">
 											<input class="guest-attending-decline hide" type="radio" name="guest_attending" value="no"/>
 											Declines with regret
@@ -703,9 +704,9 @@
 
 								<div class="col-sm-12 col-md-12 col-lg-12 guest-meal-pref-container">
 									<ul>
-										<li>
+										<li class="active">
 											<label>Beef</label>
-											<input class="guest-meal-pref-beef" type="radio" name="guest_meal_pref" value="beef"/>
+											<input class="guest-meal-pref-beef" type="radio" name="guest_meal_pref" value="beef" checked/>
 										</li>
 										<li>
 											<label>Fish</label>
@@ -719,7 +720,7 @@
 								</div>
 							</div>
 
-							<div id="kids-form-template" class="form-group row hide">
+							<div id="kids-form-template" class="row hide">
 								<p class="col-xs-3 col-sm-3">
 									Kids:
 									<input id="kids_num" name="kids_num" class="form-control" type="number" value="0" placeholder="0"/>
@@ -730,12 +731,11 @@
 								</p>
 							</div>
 
-
 							<div class="form-group submit-button hide">
 								<button class="btn btn-default btn-block" type="submit">Send RSVP
-									<!-- <p>Only one reply, thanks!</p> -->
 								</button>
 							</div>
+
 						</form>
 				</div>
 			</div>

@@ -1874,12 +1874,19 @@ hr.dashed {
 #rsvp-password {
   text-align: center;
   letter-spacing: 1vw;
+  font-variant: all-small-caps;
 }
 
 #invitation_name {
   font-variant: all-small-caps;
   text-align: center;
   letter-spacing: 0.3vw;
+}
+
+#adult-form-template {
+  border: 1px solid #888;
+  margin-top: 5vh;
+  padding: 1vw;
 }
 
 #adult-form-template .guest-name-input {
@@ -1890,18 +1897,25 @@ hr.dashed {
 
 .guest-attending-radio {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
-.guest-attending-radio.active {
+.guest-attending-radio-container {
+  padding: 1vw;
+}
+
+.guest-attending-radio label.active {
   color: white;
-  /* border-bottom: 1px dotted white; */
-  /* text-style: underline; */
 }
 
 .guest-attending-radio {
   font-variant: all-small-caps;
+}
+
+.guest-meal-pref-container ul {
+  border-top: 1px dashed #777;
+  padding: 1vw;
 }
 
 .guest-meal-pref-container ul {
@@ -1926,14 +1940,30 @@ hr.dashed {
 .guest-meal-pref.active {
   color: white;
 }
-
-#kids-form-template.form-group.row {
+#kids-form-template {
+  margin-top: 5vw;
+  border: 1px solid #777;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+
+  font-variant: all-small-caps;
 }
+#kids-form-template input[type="number"] {
+  font-variant: all-small-caps;
+  font-size: 1.5em !important;
+}
+
 #qbootstrap-started .form-control {
   padding-top: 0;
   padding-bottom: 0;
-  /* font-size: inherit !important; */
+}
+
+.submit-button {
+  margin-top: 5vw;
+}
+
+#thanks {
+  color: white;
+  opacity: 0;
 }
