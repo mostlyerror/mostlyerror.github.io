@@ -253,16 +253,13 @@
 	// Document on load.
 	$(function () {
 		burgerMenu();
-		testimonialCarousel();
+		// testimonialCarousel();
 		sliderMain();
 		clickMenu();
 		parallax();
-		// windowScroll();
 		navigationSection();
 		contentWayPoint();
 		inlineSVG();
-		// bgVideo();
-		formEvents();
 
 		correctMarginOnTimeline();
 	});

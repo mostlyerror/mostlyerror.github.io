@@ -336,6 +336,7 @@ h6 {
 }
 #qbootstrap-registry {
   background: linear-gradient(to top, rgba(255,255,255,0) 80%, rgba(255,255,255,1)), url(../images/papyrus.png);
+  margin-top: 10vh;
 }
 
 .qbootstrap-bg {
@@ -1900,7 +1901,8 @@ hr.dashed {
 }
 
 .map-container {
-  margin-top: 10vw;
+  margin-top: 50px;
+  background: #434;
 }
 
 hr { 
