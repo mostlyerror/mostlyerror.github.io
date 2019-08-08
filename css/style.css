@@ -23,7 +23,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -93,7 +93,7 @@ h6 {
 @media screen and (max-width: 767px) {
   #qbootstrap-header {
     margin-top: 0;
-    background: #fff;
+    background: #0b090a;
     -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
@@ -107,9 +107,10 @@ h6 {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    color: #ff847c !important;
   }
   #qbootstrap-header #navbar li a:hover {
-    color: #ff847c !important;
+    color: #eee !important;
   }
   #qbootstrap-header #navbar li a span:before {
     background: transparent !important;
@@ -278,17 +279,17 @@ h6 {
   padding-bottom: 20px;
   line-height: 1.5;
 }
+@media screen and (max-width: 768px) {
+  .section-heading h2 {
+    font-size: 60px;
+  }
+}
 .section-heading h3 {
   color: #ff847c;
   display: block;
   padding-bottom: 10px;
   line-height: 1.5;
   margin-top: 10vh;
-}
-@media screen and (max-width: 768px) {
-  .section-heading h2 {
-    font-size: 50px;
-  }
 }
 @media screen and (max-width: 768px) {
   .section-heading h3 {
@@ -313,7 +314,7 @@ h6 {
 #qbootstrap-gallery,
 #qbootstrap-testimonials,
 #qbootstrap-press {
-  padding: 7em 0;
+  padding: 4em 0;
 }
 @media screen and (max-width: 480px) {
   #qbootstrap-couple,
@@ -326,8 +327,26 @@ h6 {
   #qbootstrap-gallery,
   #qbootstrap-testimonials,
   #qbootstrap-press {
-    padding: 5em 0;
+    padding: 3em 0;
   }
+}
+
+#qbootstrap-story {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 1)
+    ),
+    url(../images/papyrus.png);
+}
+#qbootstrap-registry {
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 1)
+    ),
+    url(../images/papyrus.png);
+  margin-top: 10vh;
 }
 
 .qbootstrap-bg {
@@ -968,8 +987,9 @@ h6 {
 
 .timeline {
   list-style: none;
-  padding: 20px 0 20px;
+  padding: 20px 0 20px 0;
   position: relative;
+  font-size: 20px;
 }
 
 .timeline > li {
@@ -1036,6 +1056,7 @@ h6 {
   line-height: 1em;
   margin-top: 5vh;
 }
+
 .timeline-heading-center {
   text-align: center;
 }
@@ -1050,7 +1071,7 @@ h6 {
 
 .timeline-title {
   display: inline-block;
-  font-size: 40px;
+  font-size: 60px;
   color: #ff847c;
   margin-bottom: 10px;
 }
@@ -1062,9 +1083,15 @@ h6 {
   width: 100px;
 }
 
+.timeline-headshot.engaged {
+  width: 175px;
+  box-shadow: 0 0 100px 5px #ffba7f82;
+}
+
 .date {
+  margin-top: 5vh;
   margin-bottom: 5vh;
-  font-size: 13px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -1865,7 +1892,7 @@ hr.dashed {
 }
 
 .navbar-right li span {
-  font-size: 2vw;
+  font-size: 1em;
 }
 .ceremony {
   margin-bottom: 5vw;
@@ -1966,4 +1993,25 @@ hr.dashed {
 #thanks {
   color: white;
   opacity: 0;
+  font-size: 20px;
+}
+
+.section-info {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px;
+}
+@media screen and (min-width: 767px) {
+  .section-info {
+    line-height: 2em;
+  }
+}
+
+.map-container {
+  margin-top: 50px;
+  background: #111;
+}
+
+hr {
+  border: 0 !important;
 }
