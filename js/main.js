@@ -250,121 +250,6 @@
 		});
 	};
 
-
-	// // Set the date we're counting down to
-	// 	var countDownDate = new Date("Dec 02, 2017 15:37:25").getTime();
-
-	// 	// Update the count down every 1 second
-	// 	var x = setInterval(function() {
-
-	// 	// Get todays date and time
-	// 	var now = new Date().getTime();
-
-	// 	// Find the distance between now an the count down date
-	// 	var distance = countDownDate - now;
-
-	// 	// Time calculations for days, hours, minutes and seconds
-	// 	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	// 	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	// 	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	// 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-	// 	// Display the result in an element with id="demo"
-	// 	// document.getElementById("demo").innerHTML = days + "Days " + hours + "Hours "
-	// 	// + minutes + "Minutes " + seconds + "Seconds ";
-
-	// 	// Display the result in an element with id="demo"
-	// 	document.getElementById("days").innerHTML = days +" <small>days</small>";
-	// 	document.getElementById("hours").innerHTML = hours + " <small>hours</small> ";
-	// 	document.getElementById("minutes").innerHTML = minutes + " <small>minutes</small> ";
-	// 	document.getElementById("seconds").innerHTML = seconds + " <small>seconds</small> ";
-
-	// 	// If the count down is finished, write some text 
-	// 	if (distance < 0) {
-	// 	 clearInterval(x);
-	// 	 document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
-	// 	}
-	// 	}, 1000);	
-
-
-	// var bgVideo = function() {
-	// 	$('.player').mb_YTPlayer();
-	// };
-
-	var formEvents = function () {
-		// var $revealFields = $('.reveal');
-		// var $radios = $('input[name="attending_radio"]');
-		// $radios.each((radio) => {
-		// 	$radios[radio].addEventListener('change', (event) => {
-		// 		// if (event.target.value === "yes") {
-		// 		// 	$revealFields.show();
-		// 		// } else {
-		// 		// 	$revealFields.hide();
-		// 		// }
-		// 	})
-		// })
-
-		// var $form = document.getElementById('rsvp-form');
-		// $form.addEventListener('submit', (event) => {
-		// 	event.preventDefault();
-		// 	var enteredPassword = $password[0].value;
-		// 	if (enteredPassword !== "Psalm121") {
-		// 		alert('Incorrect Password.\nHint: I lift my eyes up to the hills...');
-		// 		// focus password field.
-		// 		$password.select();
-		// 		return false;
-		// 	} else {
-		// 		event.target.submit();
-		// 	}
-		// });
-	}
-
-	// var request;
-	// $("#rsvp-form").submit(function (event) {
-	// 	if (request) {
-	// 		request.abort();
-	// 	}
-	// 	var $form = $(this);
-	// 	// let's select and cache all the fields
-	// 	var $inputs = $form.find("input, select, button, textarea");
-	// 	var serializedData = $form.serialize();
-
-	// 	// let's disable the inputs for the duration of the ajax request
-	// 	// Note: we disable elements AFTER the form data has been serialized.
-	// 	// Disabled form elements will not be serialized.
-	// 	$inputs.prop("disabled", true);
-	// 	$('#result').text('Sending data...');
-
-	// 	// fire off the request to /form.php
-	// 	request = $.ajax({
-	// 		url: "https://script.google.com/macros/s/AKfycbx1Qf5v8faZTPSUgv07ee-bL3OKuVUYD4REpWN53X7S88Xh8lfO/exec",
-	// 		type: "post",
-	// 		data: serializedData
-	// 	});
-
-	// 	// callback handler that will be called on success
-	// 	request.done(function (response, textStatus, jqXHR) {
-	// 		// log a message to the console
-	// 		$('#result').html('<a href="https://docs.google.com/spreadsheets/d/1wB58j0ahcBC-LW4mlDx20aCMhPS6zyMPGJWzBTVEmF4/edit?usp=sharing" target="_blank">Success - see Google Sheet</a>');
-	// 		console.log("Hooray, it worked!");
-	// 	});
-
-	// 	// callback handler that will be called on failure
-	// 	request.fail(function (jqXHR, textStatus, errorThrown) {
-	// 		// log the error to the console
-	// 		console.error(
-	// 			"The following error occured: " +
-	// 			textStatus, errorThrown
-	// 		);
-	// 	});
-
-	// 	request.always(function () {
-	// 		$inputs.prop("disabled", false);
-	// 	});
-
-	// 	event.preventDefault();
-	// });
-
 	// Document on load.
 	$(function () {
 		burgerMenu();
@@ -378,6 +263,8 @@
 		inlineSVG();
 		// bgVideo();
 		formEvents();
+
+		correctMarginOnTimeline();
 	});
 
 

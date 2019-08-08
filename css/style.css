@@ -93,7 +93,7 @@ h6 {
 @media screen and (max-width: 767px) {
   #qbootstrap-header {
     margin-top: 0;
-    background: #fff;
+    background: #0b090a;
     -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
@@ -107,9 +107,10 @@ h6 {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    color: #ff847c !important;
   }
   #qbootstrap-header #navbar li a:hover {
-    color: #ff847c !important;
+    color: #eee !important;
   }
   #qbootstrap-header #navbar li a span:before {
     background: transparent !important;
@@ -1044,6 +1045,7 @@ h6 {
   line-height: 1em;
   margin-top: 5vh;
 }
+
 .timeline-heading-center {
   text-align: center;
 }
@@ -1058,7 +1060,7 @@ h6 {
 
 .timeline-title {
   display: inline-block;
-  font-size: 40px;
+  font-size: 60px;
   color: #ff847c;
   margin-bottom: 10px;
 }
@@ -1070,9 +1072,15 @@ h6 {
   width: 100px;
 }
 
+.timeline-headshot.engaged {
+  width: 175px;
+  box-shadow: 0 0 100px 5px #ffba7f82;
+}
+
 .date {
+  margin-top: 5vh;
   margin-bottom: 5vh;
-  font-size: 13px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -1893,4 +1901,9 @@ hr.dashed {
 
 .map-container {
   margin-top: 5vw;
+}
+
+
+hr { 
+  border: 0 !important;
 }
