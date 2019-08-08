@@ -1886,7 +1886,7 @@ hr.dashed {
 #adult-form-template {
   border: 1px solid #888;
   margin-top: 5vh;
-  padding: 1vw;
+  padding-top: 20px;
 }
 
 #adult-form-template .guest-name-input {
