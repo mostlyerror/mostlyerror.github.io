@@ -332,10 +332,20 @@ h6 {
 }
 
 #qbootstrap-story {
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,1)), url(../images/papyrus.png);
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 1)
+    ),
+    url(../images/papyrus.png);
 }
 #qbootstrap-registry {
-  background: linear-gradient(to top, rgba(255,255,255,0) 80%, rgba(255,255,255,1)), url(../images/papyrus.png);
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 1)
+    ),
+    url(../images/papyrus.png);
   margin-top: 10vh;
 }
 
@@ -1902,9 +1912,9 @@ hr.dashed {
 
 .map-container {
   margin-top: 50px;
-  background: #434;
+  background: #111;
 }
 
-hr { 
+hr {
   border: 0 !important;
 }
