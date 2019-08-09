@@ -2008,7 +2008,7 @@ hr.dashed {
 #kids-form-template {
   border: 1px solid #777;
   margin-top: 5vh;
-  padding-bottom: 2vw;
+  padding-top: 20px;
   font-variant: all-small-caps;
 }
 
@@ -2018,7 +2018,8 @@ hr.dashed {
 }
 
 .kids-form-selections label {
-  margin-right: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .kids-form-notice {
@@ -2058,9 +2059,19 @@ hr.dashed {
 #thanks {
   color: white;
   display: none;
-  font-size: 20px;
+  transition: 1.5s all;
 }
 
+#thanks h2 {
+  color: white;
+  font-size: 30px;
+}
+
+@media screen and (min-width: 767px) {
+  #thanks h2 {
+    font-size: 60px;
+  }
+}
 .section-info {
   padding-left: 40px;
   padding-right: 40px;

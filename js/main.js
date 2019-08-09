@@ -451,8 +451,10 @@
       const guest_meal_pref = $(form).find(
         'input[name^="guest_meal_pref"]:checked'
       )[0].value;
-      const kids_num = $("#kids_num").val();
-      const infants_num = $("#infants_num").val();
+      const kids_num = $("#kids_num").val() || 0 
+      const infants_num = $("#infants_num").val() || 0
+      const mac_and_cheese_num = $("#mac_and_cheese_num").val() || 0
+      const chicken_tenders_num = $("#chicken_tenders_num").val() || 0
 
       const data = {
         invitation_id,
@@ -461,7 +463,9 @@
         guest_attending,
         guest_meal_pref,
         kids_num,
-        infants_num
+        infants_num,
+        mac_and_cheese_num,
+        chicken_tenders_num
       };
 
       $(".submit-button").prop("disabled", true);
@@ -475,7 +479,7 @@
       }).error(function(err) {
         if (err.status === 200) {
           $(".submit-button", "#rsvp-form").fadeOut('fast', () => {
-            $("#thanks").fadeIn('fast')
+            $("#thanks").addClass('animated fadeInUp').show()
           });
         }
       });
