@@ -1909,7 +1909,7 @@ hr.dashed {
   font-variant: all-small-caps;
   text-align: center;
   letter-spacing: 0.3vw;
-  font-size: 26px !important;
+  /* font-size: 26px !important; */
   display: none;
 }
 
@@ -1948,7 +1948,7 @@ hr.dashed {
 }
 
 .guest-attending-radio label {
-  font-size: 22px;
+  font-size: 16px;
   cursor: pointer;
 }
 @media screen and (min-width: 767px) {
@@ -1982,7 +1982,7 @@ hr.dashed {
 .guest-meal-pref-container li {
   display: inline;
   font-variant: all-small-caps;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 767px) {
@@ -2036,7 +2036,7 @@ hr.dashed {
 
 #kids-form-template div label {
   margin-right: 10px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 #kids-form-template input[type="number"] {
