@@ -1410,7 +1410,7 @@ h6 {
   background: rgba(255, 255, 255, 0.2);
   border: none !important;
   color: #fff;
-  font-size: 16px !important;
+  /* font-size: 16px !important; */
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1909,6 +1909,7 @@ hr.dashed {
   font-variant: all-small-caps;
   text-align: center;
   letter-spacing: 0.3vw;
+  font-size: 26px !important;
 }
 
 .ui-menu-item {
@@ -1954,7 +1955,7 @@ hr.dashed {
 }
 @media screen and (min-width: 767px) {
   .guest-attending-radio label {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 
@@ -1983,13 +1984,13 @@ hr.dashed {
 .guest-meal-pref-container li {
   display: inline;
   font-variant: all-small-caps;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 @media screen and (min-width: 767px) {
   .guest-meal-pref-container li {
     display: inline;
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 
@@ -2029,6 +2030,7 @@ hr.dashed {
   padding-top: 5vh;
   padding-left: 3vw;
   padding-right: 3vw;
+  color: #eee;
 }
 
 #kids-form-template div {
@@ -2036,6 +2038,7 @@ hr.dashed {
 
 #kids-form-template div label {
   margin-right: 10px;
+  font-size: 22px;
 }
 
 #kids-form-template input[type="number"] {
