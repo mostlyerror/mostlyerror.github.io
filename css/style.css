@@ -350,7 +350,8 @@ h6 {
 }
 
 .qbootstrap-bg {
-  background: rgba(0, 0, 0, 0.03);
+  /* background: rgba(0, 0, 0, 0.03); */
+  background-color: black;
 }
 
 /* asdf */
@@ -1409,7 +1410,7 @@ h6 {
   background: rgba(255, 255, 255, 0.2);
   border: none !important;
   color: #fff;
-  font-size: 16px !important;
+  /* font-size: 16px !important; */
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1853,7 +1854,6 @@ h6 {
 }
 
 .js .animate-box {
-  opacity: 0;
 }
 
 .qbootstrap-animated {
@@ -1877,9 +1877,9 @@ hr.dashed {
   margin-top: 10vh;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .container {
-    width: 1200px;
+    width: 1400px;
   }
 }
 .form-container {
@@ -1896,9 +1896,183 @@ hr.dashed {
 }
 .ceremony {
   margin-bottom: 5vw;
-  font-size: 20px;
 }
 
+#rsvp-password {
+  text-align: center;
+  letter-spacing: 1vw;
+  font-variant: all-small-caps;
+}
+
+/* autocomplete component */
+#invitation_name {
+  font-variant: all-small-caps;
+  text-align: center;
+  letter-spacing: 0.3vw;
+  font-size: 26px !important;
+  display: none;
+}
+
+.ui-menu-item {
+  color: white;
+}
+.ui-menu-item:hover {
+  color: #ff847c;
+}
+
+#rsvp-form:first-child: {
+  margin-top: 0;
+}
+
+#adult-form-template {
+  border: 1px solid #888;
+  margin-top: 5vh;
+  padding-top: 20px;
+}
+
+#adult-form-template .guest-name-input {
+  text-align: center;
+  font-variant: all-small-caps;
+  font-size: 1.5em !important;
+  letter-spacing: 3px;
+}
+
+.guest-attending-radio-container {
+  padding: 1vw;
+}
+
+.guest-attending-radio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.guest-attending-radio label {
+  font-size: 22px;
+  cursor: pointer;
+}
+@media screen and (min-width: 767px) {
+  .guest-attending-radio label {
+    font-size: 30px;
+  }
+}
+
+.guest-attending-radio label.active {
+  color: white;
+}
+
+.guest-attending-radio {
+  font-variant: all-small-caps;
+}
+
+.guest-meal-pref-container ul {
+  border-top: 1px dashed #777;
+  padding: 1vw;
+}
+
+.guest-meal-pref-container ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+.guest-meal-pref-container label {
+  cursor: pointer;
+}
+
+.guest-meal-pref-container li {
+  display: inline;
+  font-variant: all-small-caps;
+  font-size: 22px;
+}
+
+@media screen and (min-width: 767px) {
+  .guest-meal-pref-container li {
+    display: inline;
+    font-size: 30px;
+  }
+}
+
+.guest-meal-pref-container li.active {
+  color: white;
+}
+
+.guest-meal-pref-container input[type="radio"] {
+  display: none;
+}
+
+.guest-meal-pref.active {
+  color: white;
+}
+
+#kids-form-template {
+  border: 1px solid #777;
+  margin-top: 5vh;
+  padding-top: 20px;
+  font-variant: all-small-caps;
+}
+
+.kids-form-selections {
+  display: flex;
+  justify-content: space-around;
+}
+
+.kids-form-selections label {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.kids-form-notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  color: #eee;
+}
+
+#kids-form-template div {
+}
+
+#kids-form-template div label {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+#kids-form-template input[type="number"] {
+  font-variant: all-small-caps;
+  font-size: 1.5em !important;
+  height: 35px; 
+  width: 60px;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+#qbootstrap-started .form-control {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.submit-button {
+  margin-top: 5vw;
+}
+
+#thanks {
+  color: white;
+  display: none;
+  transition: 1.5s all;
+}
+
+#thanks h2 {
+  color: white;
+  font-size: 30px;
+}
+
+@media screen and (min-width: 767px) {
+  #thanks h2 {
+    font-size: 60px;
+  }
+}
 .section-info {
   padding-left: 40px;
   padding-right: 40px;
