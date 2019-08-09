@@ -284,7 +284,7 @@
     appendTo: null,
     autoFocus: true,
     disabled: false,
-    minLength: 3,
+    minLength: 2,
     source: (req, res) => {
       const matcher = new RegExp($.ui.autocomplete.escapeRegex(req.term), "i");
       const matches = window.guestData.filter(guest => {
