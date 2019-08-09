@@ -289,20 +289,15 @@
     disabled: false,
     minLength: 3,
     source: (req, res) => {
-      const matcher = new RegExp(
-        "^" + $.ui.autocomplete.escapeRegex(req.term),
-        "i"
-      );
-
-      const matches = guestData.filter(guest =>
-        matcher.test(guest["Invitation Name"])
-      );
-      res(matches);
+      const matcher = new RegExp($.ui.autocomplete.escapeRegex(req.term), "i");
+      const matches = window.guestData.filter(guest => {
+        return matcher.test(guest["Guests"] + guest["Alternate Names"])
+      });
+      res(matches)
     }
   });
 
   $("#invitation_name").on("autocompleteselect", function(event, ui) {
-    $("#invitation_name").hide();
     const party = ui.item;
     $("#invitation_id").val(party.invitation_id);
 
@@ -331,6 +326,7 @@
           .parent()
           .addClass("active");
         $(this).val("yes");
+        const $mealPrefs = $adultForm.find('.guest-meal-pref-container').show();
       });
 
       const $attendingDecline = $adultForm.find(".guest-attending-decline");
@@ -344,17 +340,8 @@
           .parent()
           .addClass("active");
         $(this).val("no");
+        $adultForm.find('.guest-meal-pref-container').hide();
       });
-
-      if (party["Coming?"] === "Yes") {
-        $attendingAccept.val("yes");
-        $attendingAccept.parent().addClass("active");
-        $attendingDecline.parent().removeClass("active");
-      } else {
-        $attendingDecline.val("no");
-        $attendingDecline.parent().addClass("active");
-        $attendingAccept.parent().removeClass("active");
-      }
 
       const $guestBeef = $adultForm.find(".guest-meal-pref-beef");
       const $guestFish = $adultForm.find(".guest-meal-pref-fish");
