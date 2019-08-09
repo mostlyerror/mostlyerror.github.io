@@ -1904,10 +1904,22 @@ hr.dashed {
   font-variant: all-small-caps;
 }
 
+/* autocomplete component */
 #invitation_name {
   font-variant: all-small-caps;
   text-align: center;
   letter-spacing: 0.3vw;
+}
+
+.ui-menu-item {
+  color: white;
+}
+.ui-menu-item:hover {
+  color: #ff847c;
+}
+
+#rsvp-form:first-child: {
+  margin-top: 0;
 }
 
 #adult-form-template {
@@ -1920,6 +1932,11 @@ hr.dashed {
   text-align: center;
   font-variant: all-small-caps;
   font-size: 1.5em !important;
+  letter-spacing: 3px;
+}
+
+.guest-attending-radio-container {
+  padding: 1vw;
 }
 
 .guest-attending-radio {
@@ -1928,8 +1945,14 @@ hr.dashed {
   align-items: center;
 }
 
-.guest-attending-radio-container {
-  padding: 1vw;
+.guest-attending-radio label {
+  font-size: 22px;
+  cursor: pointer;
+}
+@media screen and (min-width: 767px) {
+  .guest-attending-radio label {
+    font-size: 26px;
+  }
 }
 
 .guest-attending-radio label.active {
@@ -1950,10 +1973,21 @@ hr.dashed {
   display: flex;
   justify-content: space-around;
 }
+.guest-meal-pref-container label {
+  cursor: pointer;
+}
 
 .guest-meal-pref-container li {
   display: inline;
   font-variant: all-small-caps;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 767px) {
+  .guest-meal-pref-container li {
+    display: inline;
+    font-size: 24px;
+  }
 }
 
 .guest-meal-pref-container li.active {
@@ -1969,6 +2003,7 @@ hr.dashed {
 }
 #kids-form-template {
   margin-top: 5vw;
+  padding-bottom: 5vw;
   border: 1px solid #777;
   display: flex;
   justify-content: space-between;
@@ -1992,6 +2027,7 @@ hr.dashed {
 
 #thanks {
   color: white;
+  display: none;
   opacity: 0;
   font-size: 20px;
 }
