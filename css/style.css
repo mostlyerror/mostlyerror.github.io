@@ -1910,6 +1910,7 @@ hr.dashed {
   text-align: center;
   letter-spacing: 0.3vw;
   font-size: 26px !important;
+  display: none;
 }
 
 .ui-menu-item {
@@ -1917,9 +1918,6 @@ hr.dashed {
 }
 .ui-menu-item:hover {
   color: #ff847c;
-}
-
-#rsvp-form {
 }
 
 #rsvp-form:first-child: {

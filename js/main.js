@@ -232,13 +232,10 @@
     const value = e.target.value;
     if (value.length == 7) {
       if (value == "ktq+nko") {
-        // hide this form
-        $("#rsvp-password").hide();
 
-        // unhide the other form
-        // const rsvpForm = document.getElementById("rsvp-form");
-        // $(rsvpForm).fadeIn();
-        // fade this thing out and fade rsvp form in
+        $(".rsvp-password-container").fadeOut('fast', () => {
+          $("#invitation_name").addClass("animate fadeInUp").show();
+        })
       } else {
         alert("Incorrect password");
         $(this).focus();
