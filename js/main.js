@@ -298,10 +298,14 @@
   });
 
   $("#invitation_name").on("autocompleteselect", function(event, ui) {
+
     const party = ui.item;
     $("#invitation_id").val(party.invitation_id);
 
     const $rsvpForm = $("#rsvp-form");
+    $("#rsvp-form #adult-form-template").remove()
+    $("#rsvp-form #kids-form-template").remove()
+
     const adultFormTemplate = document.getElementById("adult-form-template");
     const kidsFormTemplate = document.getElementById("kids-form-template");
     const guestNames = party.Guests.split(", ");
@@ -424,10 +428,11 @@
       .removeClass('hide')
       .appendTo($rsvpForm)
 
-    adultFormTemplate.remove();
-    kidsFormTemplate.remove();
+    // adultFormTemplate.remove();
+    // kidsFormTemplate.remove();
 
-    $("#rsvp-form").removeClass('hide').fadeIn('fast')
+    $("#rsvp-form").addClass('animated fadeInUp').show()
+    $("#rsvp-form").prop("disabled", true)
   });
 
   // submit to Google Sheet "database"
