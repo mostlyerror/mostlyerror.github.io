@@ -411,19 +411,23 @@
       $adultForm.removeClass("hide");
     }
 
-    const $kidsForm = $(kidsFormTemplate).clone();
-    $kidsForm.find("#kids_num").val(party.Child);
-    $kidsForm.find("#infants_num").val(party.Infant);
-    $kidsForm.appendTo($rsvpForm);
-    $kidsForm.removeClass("hide");
+    if (party.Child || party.Infant) {
+      const $kidsForm = $(kidsFormTemplate).clone();
+      $kidsForm.find("#kids_num").val(party.Child);
+      $kidsForm.find("#infants_num").val(party.Infant);
+      $kidsForm.appendTo($rsvpForm);
+      $kidsForm.removeClass("hide");
+    }
 
     $("#rsvp-form .submit-button")
       .first()
+      .removeClass('hide')
       .appendTo($rsvpForm)
-      .removeClass("hide");
 
     adultFormTemplate.remove();
     kidsFormTemplate.remove();
+
+    $("#rsvp-form").removeClass('hide').fadeIn('fast')
   });
 
   // submit to Google Sheet "database"

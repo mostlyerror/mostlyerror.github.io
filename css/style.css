@@ -350,7 +350,8 @@ h6 {
 }
 
 .qbootstrap-bg {
-  background: rgba(0, 0, 0, 0.03);
+  /* background: rgba(0, 0, 0, 0.03); */
+  background-color: black;
 }
 
 /* asdf */
@@ -1853,7 +1854,6 @@ h6 {
 }
 
 .js .animate-box {
-  opacity: 0;
 }
 
 .qbootstrap-animated {
@@ -1916,6 +1916,9 @@ hr.dashed {
 }
 .ui-menu-item:hover {
   color: #ff847c;
+}
+
+#rsvp-form {
 }
 
 #rsvp-form:first-child: {
@@ -2001,19 +2004,46 @@ hr.dashed {
 .guest-meal-pref.active {
   color: white;
 }
-#kids-form-template {
-  margin-top: 5vw;
-  padding-bottom: 5vw;
-  border: 1px solid #777;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
 
+#kids-form-template {
+  border: 1px solid #777;
+  margin-top: 5vh;
+  padding-bottom: 2vw;
   font-variant: all-small-caps;
 }
+
+.kids-form-selections {
+  display: flex;
+  justify-content: space-around;
+}
+
+.kids-form-selections label {
+  margin-right: 50px;
+}
+
+.kids-form-notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+#kids-form-template div {
+}
+
+#kids-form-template div label {
+  margin-right: 10px;
+}
+
 #kids-form-template input[type="number"] {
   font-variant: all-small-caps;
   font-size: 1.5em !important;
+  height: 35px; 
+  width: 60px;
+  padding-left: 10px;
+  padding-right: 0;
 }
 
 #qbootstrap-started .form-control {
@@ -2028,7 +2058,6 @@ hr.dashed {
 #thanks {
   color: white;
   display: none;
-  opacity: 0;
   font-size: 20px;
 }
 

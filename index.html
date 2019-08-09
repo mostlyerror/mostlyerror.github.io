@@ -321,8 +321,7 @@
 		</div>
 	</div>
 
-	<div id="qbootstrap-started" class="qbootstrap-bg" data-section="rsvp" data-stellar-background-ratio="0.5"
-		style="background-image: url(images/cover_bg_1.jpg);">
+	<div id="qbootstrap-started" class="qbootstrap-bg" data-section="rsvp" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -351,7 +350,6 @@
 						</div>
 						
 						<form id="rsvp-form" class="form">
-
 							<div id="thanks" class="container">
 								<h2>Thanks for your response!</h2>
 							</div>
@@ -365,8 +363,7 @@
 
 									<div class="guest-attending-radio">
 										<label class="active" for="">
-											<input class="guest-attending-accept hide" type="radio" name="guest_attending" value="yes"
-												checked />
+											<input class="guest-attending-accept hide" type="radio" name="guest_attending" value="yes" checked />
 											Accepts with pleasure
 										</label>
 										<label for="">
@@ -388,22 +385,39 @@
 										</li>
 										<li>
 											<label>Vegetarian</label>
-											<input class="guest-meal-pref-vegetarian" type="radio" name="guest_meal_pref"
-												value="vegetarian" />
+											<input class="guest-meal-pref-vegetarian" type="radio" name="guest_meal_pref" value="vegetarian" />
 										</li>
 									</ul>
 								</div>
 							</div>
 
-							<div id="kids-form-template" class="row hide">
-								<div class="col-xs-3 col-sm-3">
-									Kids:
-									<input id="kids_num" name="kids_num" class="form-control" type="number" value="0" placeholder="0" />
+
+							<div id="kids-form-template" class="hide row">
+								<div class="kids-form-selections">
+									<div>
+										<label for="">Infants
+											<input id="infants_num" name="infants_num" class="form-control" type="number" value="0"
+												placeholder="0" />
+										</label>
+							
+										<label for="">Kids
+											<input id="kids_num" name="kids_num" class="form-control" type="number" value="0" placeholder="0" />
+										</label>
+									</div>
+									<div>
+										<label>Mac & Cheese
+											<input id="mac_and_cheese_num" class="form-control" type="number" value="0" placeholder="0" />
+										</label>
+							
+										<label>Chicken Tenders
+											<input id="chicken_tenders_num" class="form-control" type="number" value="0" placeholder="0" />
+										</label>
+									</div>
 								</div>
-								<div class="col-xs-3 col-sm-3">
-									Infants:
-									<input id="infants_num" name="infants_num" class="form-control" type="number" value="0"
-										placeholder="0" />
+								<div class="kids-form-notice">
+									<p>
+										Please enter meal selections for kids under the age of 12. Dinner will not be provided for infants.
+									</p>
 								</div>
 							</div>
 
