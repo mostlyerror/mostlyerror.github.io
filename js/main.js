@@ -276,6 +276,16 @@
       });
       window.guestData = data;
       window.gd = data;
+
+      window.gd2 = window.gd.reduce((acc, g) => {
+        let guestNames = g["Guests"].split(',').map(g => g.trim().toLowerCase())
+        let altNames = g["Alternate Names"].split(',').map(g => g.trim().toLowerCase())
+        let names = [...guestNames, ...altNames]
+        for (name of names) {
+          acc.set(name, g)
+        }
+        return acc
+      }, new Map())
     }
   }
 
@@ -283,13 +293,12 @@
     appendTo: null,
     autoFocus: true,
     disabled: false,
-    minLength: 2,
+    minLength: 5,
     source: (req, res) => {
-      const matcher = new RegExp($.ui.autocomplete.escapeRegex(req.term), "i");
-      const matches = window.guestData.filter(guest => {
-        return matcher.test(guest["Guests"] + guest["Alternate Names"])
-      });
-      res(matches)
+      let term = req.term.trim().toLowerCase()
+      if (gd2.has(term)) {
+        res([ gd2.get(term) ])
+      }
     }
   });
 
@@ -436,49 +445,55 @@
   $("#rsvp-form").on("submit", function(e) {
     e.preventDefault();
 
+    const invitation_id = $("#invitation_id").val();
+    const invitation_name = $("#invitation_name").val();
+    const kids_num = $("#kids_num").val() || 0 
+    const infants_num = $("#infants_num").val() || 0
+    const mac_and_cheese_num = $("#mac_and_cheese_num").val() || 0
+    const chicken_tenders_num = $("#chicken_tenders_num").val() || 0
+
+    const guests = []
     $("#rsvp-form #adult-form-template").each(function(i, form) {
       const guestName = $(form)
         .find(".guest-name-input")
         .val();
 
-      const invitation_id = $("#invitation_id").val();
-      const invitation_name = $("#invitation_name").val();
-      const guest_name = guestName;
       const guest_attending = $(form).find(
         'input[name^="guest_attending"]:checked'
       )[0].value;
+
       const guest_meal_pref = $(form).find(
         'input[name^="guest_meal_pref"]:checked'
       )[0].value;
-      const kids_num = $("#kids_num").val() || 0 
-      const infants_num = $("#infants_num").val() || 0
-      const mac_and_cheese_num = $("#mac_and_cheese_num").val() || 0
-      const chicken_tenders_num = $("#chicken_tenders_num").val() || 0
 
-      $(".submit-button").prop("disabled", true);
+      guests.push({
+        name: guestName,
+        attending: guest_attending,
+        meal_pref: (guest_attending ? guest_meal_pref : null),
+      })
+    })
 
-      const data = {
-        invitation_id,
-        invitation_name,
-        guest_name,
-        guest_attending,
-        guest_meal_pref,
-        kids_num,
-        infants_num,
-        mac_and_cheese_num,
-        chicken_tenders_num
-      };
+    $(".submit-button").prop("disabled", true);
 
-      const database = firebase.database();
-      const request = database.ref(`rsvps/${invitation_id}/${guest_name}`).set(data)
-      request
-        .then((a,b) => {
-          $(".submit-button", "#rsvp-form").fadeOut('fast', () => {
-            $("#thanks").addClass('animated fadeInUp').show()
-          })
+    const data = {
+      invitation_id,
+      invitation_name,
+      guests,
+      kids_num,
+      mac_and_cheese_num,
+      chicken_tenders_num,
+      infants_num,
+    };
+
+    const database = firebase.database();
+    const request = database.ref(`rsvps/${invitation_id}`).set(data)
+    request
+      .then((a,b) => {
+        $(".submit-button", "#rsvp-form").fadeOut('fast', () => {
+          $("#thanks").addClass('animated fadeInUp').show()
         })
-        .catch(err => {console.error(err)})
-    });
+      })
+      .catch(err => {console.error(err)})
   });
 
   // dom onload
