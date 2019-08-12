@@ -261,8 +261,7 @@
   };
 
   function getSheetData() {
-    const publicSpreadsheetUrl =
-      'https://docs.google.com/spreadsheets/d/1M4v_UMT3sJeMkEcza09caScQT9x1HLtor_8ymCsOTTI/edit?usp=sharing';
+    const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1EKxYYFpmBWFnTYH3f9OnexXiDBUCX4FuMMNBib2mkXM/edit?usp=sharing'
 
     Tabletop.init({
       key: publicSpreadsheetUrl,
