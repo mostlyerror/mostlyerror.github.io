@@ -261,7 +261,7 @@
   };
 
   function getSheetData() {
-    const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1EKxYYFpmBWFnTYH3f9OnexXiDBUCX4FuMMNBib2mkXM/edit?usp=sharing'
+    const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1M4v_UMT3sJeMkEcza09caScQT9x1HLtor_8ymCsOTTI/edit?usp=sharing'
 
     Tabletop.init({
       key: publicSpreadsheetUrl,
@@ -414,7 +414,12 @@
     if (party.Child || party.Infant) {
       const $kidsForm = $(kidsFormTemplate).clone();
       $kidsForm.find("#kids_num").val(party.Child);
+      $kidsForm.find("#kids_num").prop("min", "0")
+      $kidsForm.find("#kids_num").prop("max", party.Child)
       $kidsForm.find("#infants_num").val(party.Infant);
+      $kidsForm.find("#infants_num").prop("min", "0")
+      $kidsForm.find("#infants_num").prop("max", party.Infant)
+
       $kidsForm.appendTo($rsvpForm);
       $kidsForm.removeClass("hide");
     }
@@ -424,16 +429,9 @@
       .removeClass('hide')
       .appendTo($rsvpForm)
 
-    // adultFormTemplate.remove();
-    // kidsFormTemplate.remove();
-
     $("#rsvp-form").addClass('animated fadeInUp').show()
     $("#rsvp-form").prop("disabled", true)
   });
-
-  // submit to Google Sheet "database"
-  const googleSheetUrl =
-    "https://script.google.com/macros/s/AKfycby2Py0YcgHB9IvxdWe5LEnvSl1T_FecsIqt3tJl_mquqsoVziS_/exec";
 
   $("#rsvp-form").on("submit", function(e) {
     e.preventDefault();
@@ -457,6 +455,8 @@
       const mac_and_cheese_num = $("#mac_and_cheese_num").val() || 0
       const chicken_tenders_num = $("#chicken_tenders_num").val() || 0
 
+      $(".submit-button").prop("disabled", true);
+
       const data = {
         invitation_id,
         invitation_name,
@@ -469,28 +469,21 @@
         chicken_tenders_num
       };
 
-      $(".submit-button").prop("disabled", true);
-
-      $.ajax({
-        url: googleSheetUrl,
-        method: "POST",
-        data: data,
-        dataType: "jsonp",
-        contentType: "application/javascript"
-      }).error(function(err) {
-        if (err.status === 200) {
+      const database = firebase.database();
+      const request = database.ref(`rsvps/${invitation_id}/${guest_name}`).set(data)
+      request
+        .then((a,b) => {
           $(".submit-button", "#rsvp-form").fadeOut('fast', () => {
             $("#thanks").addClass('animated fadeInUp').show()
-          });
-        }
-      });
+          })
+        })
+        .catch(err => {console.error(err)})
     });
   });
 
   // dom onload
   $(function() {
     getSheetData();
-
     burgerMenu();
     sliderMain();
     clickMenu();
