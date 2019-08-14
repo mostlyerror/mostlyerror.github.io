@@ -58,8 +58,10 @@
   <![endif]-->
   <script>
     window.onload = function() {
-      // if (document.referrer !== "https://nikandkaris.com") window.history['back']()
-      alert(document.referrer)
+      const pattern = new RegExp('21a4694c34a159ec6e4f433f319b072c')
+      if (!pattern.test(window.location.search)) {
+        window.location.replace("https://nikandkaris.com")
+      }
     };
   </script>
 </head>
