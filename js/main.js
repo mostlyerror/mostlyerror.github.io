@@ -226,24 +226,6 @@
     });
   };
 
-  // password-protect the RSVP form
-  $("#rsvp-password").on("input", function(e) {
-    e.preventDefault();
-    const value = e.target.value;
-    if (value.length == 7) {
-      if (value == "ktq+nko") {
-
-        $(".rsvp-password-container").fadeOut('fast', () => {
-          $("#invitation_name").addClass("animate fadeInUp").show();
-        })
-      } else {
-        alert("Incorrect password");
-        $(this).focus();
-        $(this).select();
-      }
-    }
-  });
-
   $.fn.serializeObject = function() {
     var o = {};
     var a = this.serializeArray();
