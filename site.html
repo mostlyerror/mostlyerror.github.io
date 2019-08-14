@@ -58,10 +58,8 @@
   <![endif]-->
   <script>
     window.onload = function() {
-      const hashRegex = new RegExp(/21a4694c34a159ec6e4f433f319b072c/)
-      if (!hashRegex.test(document.referrer)) {
-        window.history['back']()
-      };
+      // if (document.referrer !== "https://nikandkaris.com") window.history['back']()
+      alert(document.referrer)
     };
   </script>
 </head>
