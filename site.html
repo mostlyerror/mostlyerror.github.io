@@ -58,8 +58,9 @@
   <![endif]-->
   <script>
     window.onload = function() {
-      if (document.referrer !== "https://nikandkaris.com?code=21a4694c34a159ec6e4f433f319b072c") {
-        document.location.href = "https://nikandkaris.com";
+      const hashRegex = new RegExp(/21a4694c34a159ec6e4f433f319b072c/)
+      if (!hashRegex.test(document.referrer)) {
+        window.history['back']()
       };
     };
   </script>
