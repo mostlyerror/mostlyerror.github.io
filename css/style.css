@@ -1909,8 +1909,6 @@ hr.dashed {
   font-variant: all-small-caps;
   text-align: center;
   letter-spacing: 0.3vw;
-  /* font-size: 26px !important; */
-  display: none;
 }
 
 .ui-menu-item {
