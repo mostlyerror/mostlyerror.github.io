@@ -4,12 +4,15 @@
     <input id="password" type="password" name="password" />
 		<script src="js/jquery.min.js"></script>
 
+    <script src="js/md5.min.js"></script>
     <script type="text/javascript">
+
       $("#password").on('input', function (e) {
         const value = e.target.value;
         if (value.length == 7) {
-          if (value == "ktq+nko") {
-            window.location.replace("https://nikandkaris.com/site.html")
+          const hash = md5(value)
+          if (hash === '21a4694c34a159ec6e4f433f319b072c') {
+            window.location.replace(`https://nikandkaris.com/site.html?code=${hash}`)
           } else {
             alert("Incorrect password");
             $(this).focus();
