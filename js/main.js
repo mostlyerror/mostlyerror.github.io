@@ -429,10 +429,10 @@
 
     const invitation_id = $("#invitation_id").val();
     const invitation_name = $("#invitation_name").val();
-    const kids_num = $("#kids_num").val() || 0 
-    const infants_num = $("#infants_num").val() || 0
-    const mac_and_cheese_num = $("#mac_and_cheese_num").val() || 0
-    const chicken_tenders_num = $("#chicken_tenders_num").val() || 0
+    const kids_num = $("#rsvp-form #kids_num").val() || 0 
+    const infants_num = $("#rsvp-form #infants_num").val() || 0
+    const mac_and_cheese_num = $("#rsvp-form #mac_and_cheese_num").val() || 0
+    const chicken_tenders_num = $("#rsvp-form #chicken_tenders_num").val() || 0
 
     const guests = []
     $("#rsvp-form #adult-form-template").each(function(i, form) {
