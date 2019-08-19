@@ -2040,7 +2040,7 @@ hr.dashed {
 #kids-form-template input[type="number"] {
   font-variant: all-small-caps;
   font-size: 1.5em !important;
-  height: 35px; 
+  height: 35px;
   width: 60px;
   padding-left: 10px;
   padding-right: 0;
@@ -2089,4 +2089,58 @@ hr.dashed {
 
 hr {
   border: 0 !important;
+}
+
+.wedding-party-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-party-group {
+}
+
+.wedding-party-group ul {
+}
+
+.wedding-party-group ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+/* .wedding-party-headline {
+  display: flex;
+  justify-content: space-between;
+} */
+.wedding-party-name {
+  color: red;
+  font-family: 'Playlist-Script';
+  font-size: 20px;
+}
+.wedding-party-role {
+  color: black;
+  font-variant: all-small-caps;
+  letter-spacing: 1px;
+}
+.wedding-party-member {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wedding-party-photo {
+  background-image: url('../images/sharon_3024x4032.jpg');
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.wedding-party-description {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: justify;
+  width: 70%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  text-indent: 20px;
 }
