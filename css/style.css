@@ -37,6 +37,7 @@ body {
   background: #fff;
   height: 100%;
   position: relative;
+  box-sizing: border-box;
 }
 
 a {
@@ -1853,9 +1854,6 @@ h6 {
   border-color: #ff847c;
 }
 
-.js .animate-box {
-}
-
 .qbootstrap-animated {
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
@@ -1879,7 +1877,7 @@ hr.dashed {
 
 @media screen and (min-width: 1400px) {
   .container {
-    width: 1400px;
+    width: 1200px;
   }
 }
 .form-container {
@@ -1893,9 +1891,6 @@ hr.dashed {
 
 .navbar-right li span {
   font-size: 1em;
-}
-.ceremony {
-  margin-bottom: 5vw;
 }
 
 #rsvp-password {
@@ -1918,12 +1913,7 @@ hr.dashed {
   color: #ff847c;
 }
 
-#rsvp-form:first-child: {
-  margin-top: 0;
-}
-
 #adult-form-template {
-  border: 1px solid #888;
   margin-top: 5vh;
   padding-top: 20px;
 }
@@ -2029,9 +2019,6 @@ hr.dashed {
   color: #eee;
 }
 
-#kids-form-template div {
-}
-
 #kids-form-template div label {
   margin-right: 10px;
   font-size: 18px;
@@ -2040,7 +2027,7 @@ hr.dashed {
 #kids-form-template input[type="number"] {
   font-variant: all-small-caps;
   font-size: 1.5em !important;
-  height: 35px; 
+  height: 35px;
   width: 60px;
   padding-left: 10px;
   padding-right: 0;
@@ -2089,4 +2076,87 @@ hr.dashed {
 
 hr {
   border: 0 !important;
+}
+#wedding-party {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 1)
+    ),
+    url(../images/papyrus.png);
+}
+
+.wedding-party-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-party-container ul {
+  max-width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  .wedding-party-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .wedding-party-container ul {
+    width: 50%;
+    margin: 15px;
+  }
+  .wedding-party-container ul:last-child .wedding-party-member {
+    /* flex-direction: row-reverse; */
+  }
+}
+
+.wedding-party-container ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: white;
+  border: 10px solid whitesmoke;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0px 5px 8px #ddd;
+}
+.wedding-party-name {
+  color: #ff847c;
+  font-family: "Playlist-Script";
+  font-size: 30px;
+}
+.wedding-party-role {
+  color: black;
+  font-variant: all-small-caps;
+  letter-spacing: 1px;
+  font-size: 24px;
+}
+.wedding-party-member {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.wedding-party-photo {
+  background-size: cover;
+  height: 95px;
+  min-width: 95px;
+  border: 5px solid whitesmoke;
+  /* border-radius: 50%; */
+}
+.wedding-party-description {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  width: 70%;
+  min-width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
