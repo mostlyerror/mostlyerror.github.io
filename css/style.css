@@ -40,6 +40,10 @@ body {
   box-sizing: border-box;
 }
 
+.site-wrapper {
+  width: 100%;
+}
+
 a {
   color: #ff847c;
   -webkit-transition: 0.5s;
