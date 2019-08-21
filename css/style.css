@@ -37,6 +37,7 @@ body {
   background: #fff;
   height: 100%;
   position: relative;
+  box-sizing: border-box;
 }
 
 a {
@@ -2146,6 +2147,7 @@ hr {
   background-size: cover;
   height: 95px;
   min-width: 95px;
+  border: 5px solid whitesmoke;
   /* border-radius: 50%; */
 }
 .wedding-party-description {
