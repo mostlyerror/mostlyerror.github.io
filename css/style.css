@@ -2078,6 +2078,8 @@ hr {
   border: 0 !important;
 }
 #wedding-party {
+  margin-top: 30px;
+  padding-top: 30px;
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0) 80%,
